@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ p_detail.title }}</title>
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="card mb-4">
+        
+        <img class="card-img-top" src="{{ p_detail.image.url }}" alt="">
+        
+        <div class="card-body">
+            <div class="small text-muted">
+                {{ p_detail.created_at|date:"F j, Y" }}
+            </div>
+
+            <h2 class="card-title">
+                {{ p_detail.title }}
+            </h2>
+
+            <p class="card-text">
+                {{ p_detail.content|linebreaks }}
+            </p>
+
+            <a class="btn btn-primary" href="{% url 'home' %}">
+                Back Home
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
